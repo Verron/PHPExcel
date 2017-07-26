@@ -832,7 +832,9 @@ class PHPExcel_Cell
      */
     public static function stringFromColumnIndex($pColumnIndex = 0)
     {
-        //    Using a lookup cache adds a slight memory overhead, but boosts speed
+	$pColumnIndex = (int) $pColumnindex;
+
+	//    Using a lookup cache adds a slight memory overhead, but boosts speed
         //    caching using a static within the method is faster than a class static,
         //        though it's additional memory overhead
         static $_indexCache = array();
