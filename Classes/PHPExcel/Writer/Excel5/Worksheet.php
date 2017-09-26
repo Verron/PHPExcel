@@ -2825,7 +2825,7 @@ class PHPExcel_Writer_Excel5_Worksheet extends PHPExcel_Writer_Excel5_BIFFwriter
                 $options |= $type << 0;
 
                 // error style
-                $errorStyle = $dataValidation->getType();
+                $errorStyle = $dataValidation->getErrorStyle();
                 switch ($errorStyle) {
                     case PHPExcel_Cell_DataValidation::STYLE_STOP:
                         $errorStyle = 0x00;
@@ -2837,7 +2837,7 @@ class PHPExcel_Writer_Excel5_Worksheet extends PHPExcel_Writer_Excel5_BIFFwriter
                         $errorStyle = 0x02;
                         break;
                 }
-                $options |= $errorStyle << 4;
+                $options |= (int) $errorStyle << 4;
 
                 // explicit formula?
                 if ($type == 0x03 && preg_match('/^\".*\"$/', $dataValidation->getFormula1())) {
