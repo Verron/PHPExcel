@@ -1362,7 +1362,7 @@ class PHPExcel_Writer_Excel5_Worksheet extends PHPExcel_Writer_Excel5_BIFFwriter
             $colLast = $col_array[1];
         }
         if (isset($col_array[2])) {
-            $coldx = $col_array[2];
+            $coldx = (float) $col_array[2];
         } else {
             $coldx = 8.43;
         }
