@@ -102,7 +102,7 @@ class PHPExcel_Writer_Excel5_Font
         $data = pack(
             "vvvvvCCCC",
             // Fontsize (in twips)
-            ((int) $this->font->getSize()) * 20,
+            ((float) $this->font->getSize()) * 20,
             $grbit,
             // Colour
             $icv,
